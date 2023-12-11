@@ -1,4 +1,5 @@
 ﻿using MegaCasting.Class;
+using MegaCasting.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,12 +25,38 @@ namespace MegaCasting
         public MainWindow()
         {
             InitializeComponent();
-         
+            this.DataContext = new MainWindowViewModel();
 
-            using (DbMegacastingContext mg = new())
-            {
-                LbxClients.ItemsSource = mg.Users.ToList();
-            }
+        }
+
+        private void InfosButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            /**
+             * On récupère le parent du bouton, qui a pour dataContext l'utilisateur correspondant à la ligne.
+             * On indique que cet utilisateur est celui qui est sélectionné.
+             */
+            User? user = ((MainWindowViewModel)this.DataContext).SelectedUser = (((Grid)((Button)sender).Parent).DataContext as User);
+
+            // On supprime l'utilisateur sélectionné
+            ((MainWindowViewModel)this.DataContext).RemoveUser();
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            User? user = ((MainWindowViewModel)this.DataContext).SelectedUser = (((Grid)((Button)sender).Parent).DataContext as User);
+
+            // On supprime l'utilisateur sélectionné
+            ((MainWindowViewModel)this.DataContext).AddUser();
         }
     }
 }

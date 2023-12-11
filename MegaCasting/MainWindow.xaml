@@ -16,7 +16,9 @@
                         <RowDefinition Height="330"/>
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <ListBox x:Name="LbxClients">
+                    <ListBox 
+                        ItemsSource="{Binding Users}"
+                        SelectedItem="{Binding SelectedUser}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -33,15 +35,15 @@
                                     <Label Grid.Column="1" Content="{Binding Lastname}"/>
                                     <Label Grid.Column="2" Content="Prénom : "/>
                                     <Label Grid.Column="3" Content="{Binding Firstname}"/>
-                                    <Button Grid.Column="4" Foreground="CornflowerBlue">Détail</Button>
-                                    <Button Grid.Column="5" Foreground="Goldenrod">Modifier</Button>
-                                    <Button Grid.Column="6" Foreground="Firebrick" >Supprimer</Button>
+                                    <Button x:Name="InfosButton" Grid.Column="4" Foreground="CornflowerBlue" Click="InfosButton_Click">Détail</Button>
+                                    <Button x:Name="UpdateButton" Grid.Column="5" Foreground="Goldenrod" Click="UpdateButton_Click">Modifier</Button>
+                                    <Button x:Name="DeleteButton" Grid.Column="6" Foreground="Firebrick" Click="DeleteButton_Click" >Supprimer</Button>
 
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <Button Content="Ajouter" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="center" Margin="0,0,0,0"/>
+                    <Button x:Name="AddButton" Content="Ajouter" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="center" Margin="0,0,0,0" Click="AddButton_Click"/>
                 </Grid>
             </TabItem>
             
