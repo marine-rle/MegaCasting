@@ -1,0 +1,58 @@
+﻿<Window x:Class="MegaCasting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MegaCasting"
+        mc:Ignorable="d"
+        Background="Aquamarine"
+        Title="MegaCasting" Height="450" Width="800">
+    <Grid>
+        <TabControl Grid.Row="1">
+            <!-- Content for the "Clients" tab -->
+            <TabItem Header="Clients">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="330"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="LbxClients">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Content="Nom : "/>
+                                    <Label Grid.Column="1" Content="{Binding Lastname}"/>
+                                    <Label Grid.Column="2" Content="Prénom : "/>
+                                    <Label Grid.Column="3" Content="{Binding Firstname}"/>
+                                    <Button Grid.Column="4" Foreground="CornflowerBlue">Détail</Button>
+                                    <Button Grid.Column="5" Foreground="Goldenrod">Modifier</Button>
+                                    <Button Grid.Column="6" Foreground="Firebrick" >Supprimer</Button>
+
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Button Content="Ajouter" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="center" Margin="0,0,0,0"/>
+                </Grid>
+            </TabItem>
+            
+            <TabItem Header="Partenaires">
+            </TabItem>
+            
+            <TabItem Header="Offres">
+            </TabItem>
+            
+        </TabControl>
+
+  
+    </Grid>
+</Window>
