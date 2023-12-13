@@ -1,5 +1,6 @@
 ﻿using MegaCasting.Class;
 using MegaCasting.ViewModel;
+using MegaCasting.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,10 +54,10 @@ namespace MegaCasting
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            User? user = ((MainWindowViewModel)this.DataContext).SelectedUser = (((Grid)((Button)sender).Parent).DataContext as User);
+            AddUser window = new AddUser();
+            window.ShowDialog();
 
-            // On supprime l'utilisateur sélectionné
-            ((MainWindowViewModel)this.DataContext).AddUser();
+            ((MainWindowViewModel)this.DataContext).Refresh();
         }
     }
 }

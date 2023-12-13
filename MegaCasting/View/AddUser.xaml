@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MegaCasting.View"
         mc:Ignorable="d"
-        Title="AddUser" Height="450" Width="800">
+        Title="AddUser" Height="320" Width="400">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -24,19 +24,19 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Nom"           Grid.Row="1" Grid.Column="1" />
-        <TextBlock Text="PrÃ©nom"        Grid.Row="2" Grid.Column="1" />
-        <TextBlock Text="Email"         Grid.Row="3" Grid.Column="1" />
-        <TextBlock Text="Password"      Grid.Row="4" Grid.Column="1" />
-        <TextBlock Text="BirthDate"    Grid.Row="5" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Nom"                   Grid.Row="1" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Prénom"                Grid.Row="2" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Email"                 Grid.Row="3" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Mot de passe"          Grid.Row="4" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Date de naissance "    Grid.Row="5" Grid.Column="1" />
 
 
 
-        <TextBox    Text="{Binding User.Lastname}"        Grid.Row="1" Grid.Column="2"  />
-        <TextBox    Text="{Binding User.Firstname}"       Grid.Row="2" Grid.Column="2"  />
-        <TextBox    Text="{Binding User.Email}"           Grid.Row="3" Grid.Column="2"  />
-        <TextBox    Text="{Binding User.Password}"        Grid.Row="4" Grid.Column="2"  />
-        <DatePicker Text="{Binding User.BirhDate}"        Grid.Row="5" Grid.Column="2"  />
+        <TextBox    Text="{Binding User.Lastname}"        Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding User.Firstname}"       Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding User.Email}"           Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding User.Password}"        Grid.Row="4" Grid.Column="2"  Margin="10" Padding="5"/>
+        <DatePicker Text="{Binding User.BirhDate}"        Grid.Row="5" Grid.Column="2"  Margin="10" Padding="5"/>
 
 
 

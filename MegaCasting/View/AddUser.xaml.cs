@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaCasting.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,13 @@ namespace MegaCasting.View
         public AddUser()
         {
             InitializeComponent();
+            this.DataContext = new AddUserViewModel();
+        }
+
+        private void AddUserButton_Click(object sender, RoutedEventArgs e)
+        {
+            ((AddUserViewModel)this.DataContext).Add();
+            this.Close();
         }
     }
 }
