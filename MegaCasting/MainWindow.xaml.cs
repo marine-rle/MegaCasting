@@ -37,7 +37,10 @@ namespace MegaCasting
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
+            UpdateUser window = new UpdateUser();
+            window.ShowDialog();
 
+            ((MainWindowViewModel)this.DataContext).Refresh();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
