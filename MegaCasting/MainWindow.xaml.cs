@@ -32,12 +32,16 @@ namespace MegaCasting
 
         private void InfosButton_Click(object sender, RoutedEventArgs e)
         {
-
+            InfoUser window = new InfoUser();
+            window.ShowDialog();
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
+            UpdateUser window = new UpdateUser();
+            window.ShowDialog();
 
+            ((MainWindowViewModel)this.DataContext).Refresh();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)

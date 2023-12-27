@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace MegaCasting.ViewModel
 {
-    class AddUserViewModel
-    {
+    internal class UpdateUserViewModel { 
 
 
 
@@ -18,7 +17,7 @@ namespace MegaCasting.ViewModel
 
 
 
-        public AddUserViewModel()
+        public UpdateUserViewModel()
         {
             User = new User();
         }
