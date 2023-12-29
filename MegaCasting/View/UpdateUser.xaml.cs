@@ -20,15 +20,15 @@ namespace MegaCasting.View
     /// </summary>
     public partial class UpdateUser : Window
     {
-        public UpdateUser()
+        public UpdateUser(int identifierUser)
         {
             InitializeComponent();
-            this.DataContext = new UpdateUserViewModel();
+            this.DataContext = new UpdateUserViewModel(identifierUser);
         }
 
         private void UpdateUserButton_Click(object sender, RoutedEventArgs e)
         {
-            ((UpdateUserViewModel)this.DataContext).Add();
+            ((UpdateUserViewModel)this.DataContext).Update();
             this.Close();
         }
     }

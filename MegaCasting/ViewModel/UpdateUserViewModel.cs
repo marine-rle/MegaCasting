@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Org.BouncyCastle.Tls;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,35 +18,26 @@ namespace MegaCasting.ViewModel
 
 
 
-        public UpdateUserViewModel()
-        {
-            User = new User();
-        }
-
-
-        internal void Add()
+        public UpdateUserViewModel(int identifierUser)
         {
             using (DbMegacastingContext context = new())
             {
-                if (string.IsNullOrWhiteSpace(User.Email))
-                {
+                User = context.Users.First(userTemp => userTemp.Id == identifierUser);
+            }
+        }
 
-                }
-                else if (string.IsNullOrWhiteSpace(User.Lastname))
-                {
 
-                }
-                else if (string.IsNullOrWhiteSpace(User.Firstname))
-                {
-
-                }
-                else if (string.IsNullOrWhiteSpace(User.Password))
-                {
-
-                }
-                else
-                {
-                    context.Add(User);
+        internal void Update()
+        {
+            using (DbMegacastingContext context = new())
+            {
+                if (!(string.IsNullOrWhiteSpace(User.Email)
+                   || string.IsNullOrWhiteSpace(User.Lastname)
+                   || string.IsNullOrWhiteSpace(User.Firstname)
+                   || string.IsNullOrWhiteSpace(User.Password)
+                   || (User.BirthDate == null)))
+                {                
+                    context.Update(User);
                     context.SaveChanges();
                 }
             }
