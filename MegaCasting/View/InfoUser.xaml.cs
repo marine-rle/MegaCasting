@@ -22,10 +22,10 @@ namespace MegaCasting.View
     {
        
 
-        public InfoUser()
+        public InfoUser(int identifierUser)
         {
             InitializeComponent();
-            this.DataContext = new InfoUserViewModel();
+            this.DataContext = new InfoUserViewModel(identifierUser);
         }
 
        

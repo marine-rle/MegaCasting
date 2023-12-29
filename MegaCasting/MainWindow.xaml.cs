@@ -32,7 +32,7 @@ namespace MegaCasting
 
         private void InfosButton_Click(object sender, RoutedEventArgs e)
         {
-            InfoUser window = new InfoUser();
+            InfoUser window = new InfoUser((((Grid)((Button)sender).Parent).DataContext as User).Id);
             window.ShowDialog();
         }
 

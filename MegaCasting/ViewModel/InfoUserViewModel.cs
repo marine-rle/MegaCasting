@@ -7,27 +7,19 @@ namespace MegaCasting.ViewModel
 {
     internal class InfoUserViewModel
     {
-        private ObservableCollection<User> _users;
+        private User _User;
 
-        public ObservableCollection<User> Users
+        public User User
         {
-            get => _users;
-            set => _users = value;
+            get => _User;
+            set => _User = value;
         }
 
-        public InfoUserViewModel()
-        {
-            // Initialiser la liste des utilisateurs dans le constructeur
-            Users = new ObservableCollection<User>();
-            LoadUserData();
-        }
-
-        private void LoadUserData()
+        public InfoUserViewModel(int identifierUser)
         {
             using (DbMegacastingContext context = new())
             {
-                // Charger les utilisateurs depuis la base de données
-                Users = new ObservableCollection<User>(context.Users.ToList());
+                User = context.Users.First(user => user.Id == identifierUser);
             }
         }
     }

@@ -40,7 +40,7 @@ namespace MegaCasting.ViewModel
 
         #endregion
 
-  
+
         internal void UpdateUser()
         {
             using (DbMegacastingContext context = new())
