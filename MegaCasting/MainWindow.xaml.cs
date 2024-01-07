@@ -30,13 +30,16 @@ namespace MegaCasting
 
         }
 
-        private void InfosButton_Click(object sender, RoutedEventArgs e)
+
+        // User
+
+        private void InfosUserButton_Click(object sender, RoutedEventArgs e)
         {
             InfoUser window = new InfoUser((((Grid)((Button)sender).Parent).DataContext as User).Id);
             window.ShowDialog();
         }
 
-        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        private void UpdateUserButton_Click(object sender, RoutedEventArgs e)
         {
             UpdateUser window = new UpdateUser((((Grid)((Button)sender).Parent).DataContext as User).Id);
             window.ShowDialog();
@@ -44,7 +47,7 @@ namespace MegaCasting
             ((MainWindowViewModel)this.DataContext).Refresh();
         }
 
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
         {
             /**
              * On récupère le parent du bouton, qui a pour dataContext l'utilisateur correspondant à la ligne.
@@ -56,12 +59,25 @@ namespace MegaCasting
             ((MainWindowViewModel)this.DataContext).RemoveUser();
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private void AddUserButton_Click(object sender, RoutedEventArgs e)
         {
             AddUser window = new AddUser();
             window.ShowDialog();
 
             ((MainWindowViewModel)this.DataContext).Refresh();
         }
+
+        // Partner
+
+        private void AddPartnerButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddPartner window = new AddPartner();
+            window.ShowDialog();
+
+            ((MainWindowViewModel)this.DataContext).Refresh();
+        }
+
+
     }
+
 }

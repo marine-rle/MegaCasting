@@ -43,7 +43,7 @@ namespace MegaCasting.ViewModel
             using (DbMegacastingContext context = new())
             {
                 Users = new ObservableCollection<User>(context.Users.ToList());
-                Partners = new ObservableCollection<Partner>();
+                Partners = new ObservableCollection<Partner>(context.Partners.ToList());
             }
          
         }
