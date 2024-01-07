@@ -91,6 +91,13 @@ namespace MegaCasting
             ((MainWindowViewModel)this.DataContext).RemovePartner();
         }
 
+
+        private void InfosPartnerButton_Click(object sender, RoutedEventArgs e)
+        {
+            InfoPartner window = new InfoPartner((((Grid)((Button)sender).Parent).DataContext as Partner).ID);
+            window.ShowDialog();
+        }
+
     }
 
 }
