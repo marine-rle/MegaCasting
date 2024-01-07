@@ -72,6 +72,17 @@ namespace MegaCasting.ViewModel
             }
         }
 
+        internal void AddPartner()
+        {
+            Partner partner = new Partner();
+            using (DbMegacastingContext context = new())
+            {
+                context.Partners.Add(partner);
+                context.SaveChanges();
+                Partners.Add(partner);
+            }
+        }
+
 
 
         internal void RemoveUser()
@@ -88,12 +99,13 @@ namespace MegaCasting.ViewModel
         internal void Refresh()
         {
             this.Users.Clear();
+            this.Partners.Clear();
 
             using (DbMegacastingContext context = new())
             {
                 context.Users.ToList().ForEach(userTemp => this.Users.Add(userTemp));
+                context.Partners.ToList().ForEach(partnerTemp => this.Partners.Add(partnerTemp));
             }
         }
-
     }
 }
