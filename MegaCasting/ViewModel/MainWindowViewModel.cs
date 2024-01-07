@@ -60,6 +60,15 @@ namespace MegaCasting.ViewModel
             }
         }
 
+        internal void UpdatePartner()
+        {
+            using (DbMegacastingContext context = new())
+            {
+                context.Update(SelectedPartner);
+                context.SaveChanges();
+            }
+        }
+
 
         internal void AddUser()
         {

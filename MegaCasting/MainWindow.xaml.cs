@@ -98,6 +98,16 @@ namespace MegaCasting
             window.ShowDialog();
         }
 
+
+
+        private void UpdatePartnerButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdatePartner window = new UpdatePartner((((Grid)((Button)sender).Parent).DataContext as Partner).ID);
+            window.ShowDialog();
+
+            ((MainWindowViewModel)this.DataContext).Refresh();
+        }
+
     }
 
 }
