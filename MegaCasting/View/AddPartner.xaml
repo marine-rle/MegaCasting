@@ -32,7 +32,7 @@
 
 
         <TextBox    Text="{Binding Partner.Label}"        Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding Partner.Siret}"       Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding Partner.SIRET}"       Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
         <TextBox    Text="{Binding Partner.Description}"           Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
         <DatePicker SelectedDate="{Binding Partner.DateTime}"        Grid.Row="5" Grid.Column="2"  Margin="10" Padding="5"/>
 

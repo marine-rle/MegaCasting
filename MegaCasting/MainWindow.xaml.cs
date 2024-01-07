@@ -67,6 +67,7 @@ namespace MegaCasting
             ((MainWindowViewModel)this.DataContext).Refresh();
         }
 
+
         // Partner
 
         private void AddPartnerButton_Click(object sender, RoutedEventArgs e)
