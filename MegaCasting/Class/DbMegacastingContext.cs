@@ -16,6 +16,7 @@ public partial class DbMegacastingContext : DbContext
     }
 
     public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<Partner> Partners { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -36,6 +37,22 @@ public partial class DbMegacastingContext : DbContext
             entity.Property(e => e.Lastname).HasMaxLength(75);
             entity.Property(e => e.Password).HasMaxLength(100);
         });
+
+        modelBuilder.Entity<Partner>(entity =>
+        {
+            entity.HasKey(e => e.ID).HasName("PRIMARY");
+
+            entity.ToTable("partners");
+
+            entity.Property(e => e.ID).HasColumnName("ID");
+            entity.Property(e => e.Label).HasMaxLength(100);
+            entity.Property(e => e.SIRET).HasMaxLength(14);
+            entity.Property(e => e.Description).HasMaxLength(100);
+            entity.Property(e => e.DateTime).HasColumnType("datetime");
+
+
+        });
+
 
         OnModelCreatingPartial(modelBuilder);
     }

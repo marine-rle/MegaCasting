@@ -48,6 +48,40 @@
             </TabItem>
             
             <TabItem Header="Partenaires">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="330"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <ListBox 
+         ItemsSource="{Binding Partners}"
+         SelectedItem="{Binding SelectedPartner}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Content="Nom : "/>
+                                    <Label Grid.Column="1" Content="{Binding Label}"/>
+                                    <Label Grid.Column="2" Content="Prénom : "/>
+                                    <Label Grid.Column="3" Content="{Binding SIRET}"/>
+                                    <Button Grid.Column="4" Foreground="CornflowerBlue" >Détail</Button>
+                                    <Button Grid.Column="5" Foreground="Goldenrod" >Modifier</Button>
+                                    <Button Grid.Column="6" Foreground="Firebrick"  >Supprimer</Button>
+
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Button Content="Ajouter" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="center" Margin="0,0,0,0" />
+                </Grid>
             </TabItem>
             
             <TabItem Header="Offres">

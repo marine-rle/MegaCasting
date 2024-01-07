@@ -17,6 +17,10 @@ namespace MegaCasting.ViewModel
 
         private User? _SelectedUser;
 
+
+        private ObservableCollection<Partner> _Partners;
+        private Partner? _SelectedPartner;
+
         #endregion
 
         #region Properties
@@ -24,6 +28,10 @@ namespace MegaCasting.ViewModel
         public ObservableCollection<User> Users { get => _Users; set => _Users = value; }
 
         public User? SelectedUser { get => _SelectedUser; set => _SelectedUser = value; }
+
+        public ObservableCollection<Partner> Partners { get => _Partners; set => _Partners = value; }
+
+        public Partner? SelectedPartner { get => _SelectedPartner; set => _SelectedPartner = value; }
 
         #endregion
 
@@ -35,7 +43,9 @@ namespace MegaCasting.ViewModel
             using (DbMegacastingContext context = new())
             {
                 Users = new ObservableCollection<User>(context.Users.ToList());
+                Partners = new ObservableCollection<Partner>();
             }
+         
         }
 
         #endregion
