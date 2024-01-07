@@ -74,7 +74,7 @@
                                     <Label Grid.Column="3" Content="{Binding SIRET}"/>
                                     <Button Grid.Column="4" Foreground="CornflowerBlue">Détail</Button>
                                     <Button Grid.Column="5" Foreground="Goldenrod">Modifier</Button>
-                                    <Button Grid.Column="6" Foreground="Firebrick">Supprimer</Button>
+                                    <Button x:Name="DeletePartnerButton"  Grid.Column="6" Foreground="Firebrick" Click="DeletePartnerButton_Click">Supprimer</Button>
 
                                 </Grid>
                             </DataTemplate>

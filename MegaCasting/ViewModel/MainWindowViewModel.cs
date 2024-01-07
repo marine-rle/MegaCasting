@@ -96,6 +96,17 @@ namespace MegaCasting.ViewModel
             }
         }
 
+        internal void RemovePartner()
+        {
+
+            using (DbMegacastingContext context = new())
+            {
+                context.Partners.Remove(SelectedPartner);
+                context.SaveChanges();
+                Partners.Remove(SelectedPartner);
+            }
+        }
+
         internal void Refresh()
         {
             this.Users.Clear();

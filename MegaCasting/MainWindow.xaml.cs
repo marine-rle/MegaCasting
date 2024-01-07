@@ -79,6 +79,18 @@ namespace MegaCasting
         }
 
 
+        private void DeletePartnerButton_Click(object sender, RoutedEventArgs e)
+        {
+            /**
+             * On récupère le parent du bouton, qui a pour dataContext l'utilisateur correspondant à la ligne.
+             * On indique que cet utilisateur est celui qui est sélectionné.
+             */
+            Partner? partner = ((MainWindowViewModel)this.DataContext).SelectedPartner = (((Grid)((Button)sender).Parent).DataContext as Partner);
+
+            // On supprime l'utilisateur sélectionné
+            ((MainWindowViewModel)this.DataContext).RemovePartner();
+        }
+
     }
 
 }
