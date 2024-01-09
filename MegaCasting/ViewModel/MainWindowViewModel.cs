@@ -21,6 +21,9 @@ namespace MegaCasting.ViewModel
         private ObservableCollection<Partner> _Partners;
         private Partner? _SelectedPartner;
 
+        private ObservableCollection<Announce> _Announces;
+        private Announce? _SelectedAnnounce;
+
         #endregion
 
         #region Properties
@@ -33,6 +36,9 @@ namespace MegaCasting.ViewModel
 
         public Partner? SelectedPartner { get => _SelectedPartner; set => _SelectedPartner = value; }
 
+        public ObservableCollection<Announce> Announces { get => _Announces; set => _Announces = value; }
+        public Announce? SelectedAnnounce { get => _SelectedAnnounce; set => _SelectedAnnounce = value; }
+
         #endregion
 
         #region Constructors
@@ -44,6 +50,7 @@ namespace MegaCasting.ViewModel
             {
                 Users = new ObservableCollection<User>(context.Users.ToList());
                 Partners = new ObservableCollection<Partner>(context.Partners.ToList());
+                Announces = new ObservableCollection<Announce>(context.Announces.ToList());
             }
          
         }
@@ -65,6 +72,15 @@ namespace MegaCasting.ViewModel
             using (DbMegacastingContext context = new())
             {
                 context.Update(SelectedPartner);
+                context.SaveChanges();
+            }
+        }
+
+        internal void UpdateAnnounce()
+        {
+            using (DbMegacastingContext context = new())
+            {
+                context.Update(SelectedAnnounce);
                 context.SaveChanges();
             }
         }
@@ -92,6 +108,17 @@ namespace MegaCasting.ViewModel
             }
         }
 
+        internal void AddAnnounce()
+        {
+            Announce announce = new Announce();
+            using (DbMegacastingContext context = new())
+            {
+                context.Announces.Add(announce);
+                context.SaveChanges();
+                Announces.Add(announce);
+            }
+        }
+
 
 
         internal void RemoveUser()
@@ -116,15 +143,28 @@ namespace MegaCasting.ViewModel
             }
         }
 
+        internal void RemoveAnnounce()
+        {
+
+            using (DbMegacastingContext context = new())
+            {
+                context.Announces.Remove(SelectedAnnounce);
+                context.SaveChanges();
+                Announces.Remove(SelectedAnnounce);
+            }
+        }
+
         internal void Refresh()
         {
             this.Users.Clear();
             this.Partners.Clear();
+            this.Announces.Clear();
 
             using (DbMegacastingContext context = new())
             {
                 context.Users.ToList().ForEach(userTemp => this.Users.Add(userTemp));
                 context.Partners.ToList().ForEach(partnerTemp => this.Partners.Add(partnerTemp));
+                context.Announces.ToList().ForEach(announceTemp => this.Announces.Add(announceTemp));
             }
         }
     }

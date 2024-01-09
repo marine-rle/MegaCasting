@@ -35,9 +35,9 @@
                                     <Label Grid.Column="1" Content="{Binding Lastname}"/>
                                     <Label Grid.Column="2" Content="Prénom : "/>
                                     <Label Grid.Column="3" Content="{Binding Firstname}"/>
-                                    <Button x:Name="InfosUserButton" Grid.Column="4" Foreground="CornflowerBlue" Click="InfosUserButton_Click">Détail</Button>
-                                    <Button x:Name="UpdateUserButton" Grid.Column="5" Foreground="Goldenrod" Click="UpdateUserButton_Click">Modifier</Button>
-                                    <Button x:Name="DeleteUserButton" Grid.Column="6" Foreground="Firebrick" Click="DeleteUserButton_Click" >Supprimer</Button>
+                                    <Button x:Name="InfosUserButton"  Margin="5px" Grid.Column="4" Foreground="CornflowerBlue" Click="InfosUserButton_Click">Détail</Button>
+                                    <Button x:Name="UpdateUserButton" Margin="5px" Grid.Column="5" Foreground="Goldenrod" Click="UpdateUserButton_Click">Modifier</Button>
+                                    <Button x:Name="DeleteUserButton" Margin="5px" Grid.Column="6" Foreground="Firebrick" Click="DeleteUserButton_Click" >Supprimer</Button>
 
                                 </Grid>
                             </DataTemplate>
@@ -72,9 +72,9 @@
                                     <Label Grid.Column="1" Content="{Binding Label}"/>
                                     <Label Grid.Column="2" Content="Numéro de Siret : "/>
                                     <Label Grid.Column="3" Content="{Binding SIRET}"/>
-                                    <Button x:Name="InfosPartnerButton" Grid.Column="4" Foreground="CornflowerBlue" Click="InfosPartnerButton_Click">Détail</Button>
-                                    <Button x:Name="UpdatePartnerButton" Grid.Column="5" Foreground="Goldenrod" Click="UpdatePartnerButton_Click">Modifier</Button>
-                                    <Button x:Name="DeletePartnerButton"  Grid.Column="6" Foreground="Firebrick" Click="DeletePartnerButton_Click">Supprimer</Button>
+                                    <Button x:Name="InfosPartnerButton"  Margin="5px" Grid.Column="4" Foreground="CornflowerBlue" Click="InfosPartnerButton_Click">Détail</Button>
+                                    <Button x:Name="UpdatePartnerButton" Margin="5px" Grid.Column="5" Foreground="Goldenrod" Click="UpdatePartnerButton_Click">Modifier</Button>
+                                    <Button x:Name="DeletePartnerButton" Margin="5px" Grid.Column="6" Foreground="Firebrick" Click="DeletePartnerButton_Click">Supprimer</Button>
 
                                 </Grid>
                             </DataTemplate>
@@ -85,6 +85,40 @@
             </TabItem>
             
             <TabItem Header="Offres">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="330"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <ListBox 
+ItemsSource="{Binding Announces}"
+SelectedItem="{Binding SelectedAnnounce}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Content="Titre : "/>
+                                    <Label Grid.Column="1" Content="{Binding Title}"/>
+                                    <Label Grid.Column="2" Content="Conten : "/>
+                                    <Label Grid.Column="3" Content="{Binding Content}"/>
+                                    <Button x:Name="InfosAnnounceButton"  Margin="5px" Grid.Column="4" Foreground="CornflowerBlue" Click="InfosAnnounceButton_Click">Détail</Button>
+                                    <Button x:Name="UpdateAnnounceButton" Margin="5px" Grid.Column="5" Foreground="Goldenrod" Click="UpdateAnnounceButton_Click" >Modifier</Button>
+                                    <Button x:Name="DeleteAnnounceButton" Margin="5px" Grid.Column="6" Foreground="Firebrick" Click="DeleteAnnounceButton_Click">Supprimer</Button>
+
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Button x:Name="AddAnnounceButton" Content="Ajouter" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="center" Margin="0,0,0,0" Click="AddAnnonceButton_Click"/>
+                </Grid>
             </TabItem>
             
         </TabControl>

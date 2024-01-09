@@ -108,6 +108,47 @@ namespace MegaCasting
             ((MainWindowViewModel)this.DataContext).Refresh();
         }
 
+        // Announce
+
+        private void AddAnnonceButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddAnnounce window = new AddAnnounce();
+            window.ShowDialog();
+
+            ((MainWindowViewModel)this.DataContext).Refresh();
+        }
+
+
+        private void DeleteAnnounceButton_Click(object sender, RoutedEventArgs e)
+        {
+            /**
+             * On récupère le parent du bouton, qui a pour dataContext l'utilisateur correspondant à la ligne.
+             * On indique que cet utilisateur est celui qui est sélectionné.
+             */
+            Announce? announce = ((MainWindowViewModel)this.DataContext).SelectedAnnounce = (((Grid)((Button)sender).Parent).DataContext as Announce);
+
+            // On supprime l'utilisateur sélectionné
+            ((MainWindowViewModel)this.DataContext).RemoveAnnounce();
+        }
+
+
+        private void InfosAnnounceButton_Click(object sender, RoutedEventArgs e)
+        {
+            InfoAnnounce window = new InfoAnnounce((((Grid)((Button)sender).Parent).DataContext as Announce).ID);
+            window.ShowDialog();
+        }
+
+
+
+        private void UpdateAnnounceButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateAnnounce window = new UpdateAnnounce((((Grid)((Button)sender).Parent).DataContext as Announce).ID);
+            window.ShowDialog();
+
+            ((MainWindowViewModel)this.DataContext).Refresh();
+        }
+
     }
+
 
 }
