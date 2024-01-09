@@ -8,4 +8,4 @@ réalisé dans cette ordre:
 * **CRUD Partenaires :** Marine*
 * **CRUD Offres :** Emilien*
 
- *Listage, ajout, modification et suppresion
+ *Listage, ajout, modification et suppression
