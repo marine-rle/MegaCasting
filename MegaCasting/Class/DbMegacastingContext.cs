@@ -6,6 +6,7 @@ namespace MegaCasting.Class;
 
 public partial class DbMegacastingContext : DbContext
 {
+    // Constructeur par défaut du contexte de base de données
     public DbMegacastingContext()
     {
     }
@@ -15,6 +16,7 @@ public partial class DbMegacastingContext : DbContext
     {
     }
 
+    // Déclaration des DbSet pour les entités User, Partner et Announce
     public virtual DbSet<User> Users { get; set; }
     public virtual DbSet<Partner> Partners { get; set; }
     public virtual DbSet<Announce> Announces { get; set; }
@@ -25,6 +27,7 @@ public partial class DbMegacastingContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // Configuration de l'entité User
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
@@ -39,6 +42,7 @@ public partial class DbMegacastingContext : DbContext
             entity.Property(e => e.Password).HasMaxLength(100);
         });
 
+        // Configuration de l'entité Partner
         modelBuilder.Entity<Partner>(entity =>
         {
             entity.HasKey(e => e.ID).HasName("PRIMARY");
@@ -54,6 +58,7 @@ public partial class DbMegacastingContext : DbContext
 
         });
 
+        // Configuration de l'entité Announce
         modelBuilder.Entity<Announce>(entity =>
         {
             entity.HasKey(e => e.ID).HasName("PRIMARY");

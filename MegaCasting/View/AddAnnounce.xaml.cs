@@ -22,14 +22,15 @@ namespace MegaCasting.View
     {
         public AddAnnounce()
         {
-            InitializeComponent();
-            this.DataContext = new AddAnnounceViewModel();
+            InitializeComponent(); // Initialise les composants de l'interface utilisateur 
+            this.DataContext = new AddAnnounceViewModel(); // Initialise le contexte de données avec une instance du ViewModel associé
         }
 
+        // Gère le clic sur le bouton "AddAnnounceButton"
         private void AddAnnounceButton_Click(object sender, RoutedEventArgs e)
         {
-            ((AddAnnounceViewModel)this.DataContext).Add();
-            this.Close();
+            ((AddAnnounceViewModel)this.DataContext).Add(); // Appelle la méthode Add du ViewModel pour ajouter une annonce
+            this.Close(); // Ferme la fenêtre actuelle
         }
     }
 }

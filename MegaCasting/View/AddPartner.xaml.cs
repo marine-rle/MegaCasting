@@ -20,15 +20,22 @@ namespace MegaCasting.View
     /// </summary>
     public partial class AddPartner : Window
     {
+        // Constructeur de la classe AddPartner
         public AddPartner()
         {
+            // Initialisation des composants de l'interface utilisateur
             InitializeComponent();
+
             this.DataContext = new AddPartnerViewModel();
         }
 
+        // Gestionnaire d'événement appelé lorsqu'on clique sur le bouton "AddPartnerButton"
         private void AddPartnerButton_Click(object sender, RoutedEventArgs e)
         {
+            // Appel de la méthode Add() du ViewModel associé pour effectuer l'ajout
             ((AddPartnerViewModel)this.DataContext).Add();
+
+            // Fermeture de la fenêtre actuelle
             this.Close();
         }
     }

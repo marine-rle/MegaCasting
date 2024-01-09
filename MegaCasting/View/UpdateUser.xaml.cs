@@ -20,15 +20,21 @@ namespace MegaCasting.View
     /// </summary>
     public partial class UpdateUser : Window
     {
+        // Constructeur de la classe UpdateUser prenant en paramètre l'identifiant de l'utilisateur
         public UpdateUser(int identifierUser)
         {
+            // Initialisation des composants de la fenêtre
             InitializeComponent();
             this.DataContext = new UpdateUserViewModel(identifierUser);
         }
 
+        // Evénement du clic sur le bouton "UpdateUserButton"
         private void UpdateUserButton_Click(object sender, RoutedEventArgs e)
         {
+            // Appel de la méthode "Update" du ViewModel associé à la fenêtre
             ((UpdateUserViewModel)this.DataContext).Update();
+
+            // Fermeture de la fenêtre
             this.Close();
         }
     }

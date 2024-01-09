@@ -6,13 +6,16 @@
         xmlns:local="clr-namespace:MegaCasting.View"
         mc:Ignorable="d"
         Title="UpdateAnnonce" Height="320" Width="400">
+    <!-- Définition de la structure principale de la fenêtre -->
     <Grid>
+        <!-- Définition des colonnes de la grille -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <!-- Définition des lignes de la grille -->
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
@@ -24,21 +27,20 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Margin="12" Text="Titre : "                   Grid.Row="1" Grid.Column="1" />
-        <TextBlock Margin="12" Text="Contenue :"                Grid.Row="2" Grid.Column="1" />
-        <TextBlock Margin="12" Text="Date de début :"                 Grid.Row="3" Grid.Column="1" />
-        <TextBlock Margin="12" Text="Date de fin :"    Grid.Row="4" Grid.Column="1" />
 
+        <!-- Libellés des champs à mettre à jour -->
+        <TextBlock Margin="12" Text="Titre : "                     Grid.Row="1" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Contenue :"                   Grid.Row="2" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Date de début :"              Grid.Row="3" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Date de fin :"                Grid.Row="4" Grid.Column="1" />
 
+        <!-- Zones de texte liées aux propriétés de l'annonce -->
+        <TextBox    Text="{Binding Announce.Title}"                Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding Announce.Content}"              Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
+        <DatePicker SelectedDate="{Binding Announce.StartDate}"    Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
+        <DatePicker SelectedDate="{Binding Announce.EndDate}"      Grid.Row="4" Grid.Column="2"  Margin="10" Padding="5"/>
 
-        <TextBox    Text="{Binding Announce.Title}"        Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding Announce.Content}"       Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
-        <DatePicker    SelectedDate="{Binding Announce.StartDate}"           Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
-        <DatePicker SelectedDate="{Binding Announce.EndDate}"        Grid.Row="4" Grid.Column="2"  Margin="10" Padding="5"/>
-
-
-
-
+        <!-- Bouton de validation de la mise à jour -->
         <Button x:Name="UpdateAnnonceButton" Grid.Column="1" Grid.Row="6" Click="UpdateAnnounceButton_Click" Content="Valider"/>
 
 

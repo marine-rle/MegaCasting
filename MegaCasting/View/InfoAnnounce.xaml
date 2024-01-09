@@ -21,11 +21,14 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Column="1" Grid.Row="1"  Content="Titre : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
-        <Label Grid.Column="1" Grid.Row="2"  Content="Contenue " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
+        <!--Les balises Label définissent les étiquettes associées à chaque champ d'annonce.-->
+        <Label Grid.Column="1" Grid.Row="1"  Content="Titre : "         HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
+        <Label Grid.Column="1" Grid.Row="2"  Content="Contenue "        HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
         <Label Grid.Column="1" Grid.Row="3"  Content="Date de début : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
-        <Label Grid.Column="1" Grid.Row="4"  Content="Date de fin : " HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
+        <Label Grid.Column="1" Grid.Row="4"  Content="Date de fin : "   HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
 
+        <!--Les TextBlocks et DatePickers affichent les valeurs associées aux champs d'annonce.
+        Ils sont liés aux propriétés du modèle de données via la liaison de données (Binding).-->
         <TextBlock  Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Announce.Title}" />
         <TextBlock  Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Announce.Content}" />
         <DatePicker Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" SelectedDate="{Binding Announce.StartDate}"  IsEnabled="False"/>

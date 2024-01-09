@@ -6,13 +6,16 @@
         xmlns:local="clr-namespace:MegaCasting.View"
         mc:Ignorable="d"
         Title="AddUser" Height="320" Width="400">
+    <!-- Définition de la structure principale de la fenêtre -->
     <Grid>
+        <!-- Définition des colonnes de la grille -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <!-- Définition des lignes de la grille -->
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
@@ -24,23 +27,21 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <!-- Libellés des champs à mettre à jour -->
         <TextBlock Margin="12" Text="Nom"                   Grid.Row="1" Grid.Column="1" />
         <TextBlock Margin="12" Text="Prénom"                Grid.Row="2" Grid.Column="1" />
         <TextBlock Margin="12" Text="Email"                 Grid.Row="3" Grid.Column="1" />
         <TextBlock Margin="12" Text="Mot de passe"          Grid.Row="4" Grid.Column="1" />
         <TextBlock Margin="12" Text="Date de naissance "    Grid.Row="5" Grid.Column="1" />
 
+        <!-- Zones de texte liées aux propriétés du client -->
+        <TextBox    Text="{Binding User.Lastname}"          Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding User.Firstname}"         Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding User.Email}"             Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding User.Password}"          Grid.Row="4" Grid.Column="2"  Margin="10" Padding="5"/>
+        <DatePicker SelectedDate="{Binding User.BirthDate}" Grid.Row="5" Grid.Column="2"  Margin="10" Padding="5"/>
 
-
-        <TextBox    Text="{Binding User.Lastname}"        Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding User.Firstname}"       Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding User.Email}"           Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding User.Password}"        Grid.Row="4" Grid.Column="2"  Margin="10" Padding="5"/>
-        <DatePicker SelectedDate="{Binding User.BirthDate}"        Grid.Row="5" Grid.Column="2"  Margin="10" Padding="5"/>
-
-
-
-
+        <!-- Bouton de validation de la mise à jour -->
         <Button x:Name="UpdateUserButton" Grid.Column="1" Grid.Row="6" Click="UpdateUserButton_Click" Content="Valider"/>
 
 

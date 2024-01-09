@@ -6,14 +6,18 @@
         xmlns:local="clr-namespace:MegaCasting.View"
         mc:Ignorable="d"
         Title="AddUser" Height="320" Width="400">
+    <!-- Définition de la fenêtre -->
     <Grid>
+        <!-- Définition d'une grille pour organiser les éléments -->
         <Grid.ColumnDefinitions>
+            <!-- Définition des colonnes -->
             <ColumnDefinition />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <!-- Définition des lignes -->
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
@@ -24,23 +28,21 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <!-- Définition des étiquettes de texte -->
         <TextBlock Margin="12" Text="Nom"                   Grid.Row="1" Grid.Column="1" />
         <TextBlock Margin="12" Text="Prénom"                Grid.Row="2" Grid.Column="1" />
         <TextBlock Margin="12" Text="Email"                 Grid.Row="3" Grid.Column="1" />
         <TextBlock Margin="12" Text="Mot de passe"          Grid.Row="4" Grid.Column="1" />
         <TextBlock Margin="12" Text="Date de naissance "    Grid.Row="5" Grid.Column="1" />
 
-
-
-        <TextBox    Text="{Binding User.Lastname}"        Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding User.Firstname}"       Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding User.Email}"           Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding User.Password}"        Grid.Row="4" Grid.Column="2"  Margin="10" Padding="5"/>
+        <!-- Définition des zones de saisie -->
+        <TextBox    Text="{Binding User.Lastname}"                 Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding User.Firstname}"                Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding User.Email}"                    Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding User.Password}"                 Grid.Row="4" Grid.Column="2"  Margin="10" Padding="5"/>
         <DatePicker SelectedDate="{Binding User.BirthDate}"        Grid.Row="5" Grid.Column="2"  Margin="10" Padding="5"/>
 
-
-
-
+        <!-- Bouton pour ajouter un client -->
         <Button x:Name="AddUserButton" Grid.Column="1" Grid.Row="6" Click="AddUserButton_Click" Content="Ajouter"/>
 
 

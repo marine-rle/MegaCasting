@@ -6,15 +6,20 @@
         xmlns:local="clr-namespace:MegaCasting.View"
         mc:Ignorable="d"
         Title="AddAnnounce" Height="320" Width="400">
+    <!-- Définition de la fenêtre -->
     <Grid>
+        <!-- Définition d'une grille pour organiser les éléments -->
         <Grid.ColumnDefinitions>
+            <!-- Définition des colonnes -->
             <ColumnDefinition />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <!-- Définition des lignes -->
             <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
@@ -22,23 +27,19 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Margin="12" Text="Titre"                   Grid.Row="1" Grid.Column="1" />
-        <TextBlock Margin="12" Text="Contenue"                Grid.Row="2" Grid.Column="1" />
-        <TextBlock Margin="12" Text="Date de début"                 Grid.Row="3" Grid.Column="1" />
-        <TextBlock Margin="12" Text="Date de fin"    Grid.Row="4" Grid.Column="1" />
+        <!-- Définition des étiquettes de texte -->
+        <TextBlock Margin="12" Text="Titre"                     Grid.Row="1" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Contenu"                   Grid.Row="2" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Date de début"             Grid.Row="3" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Date de fin"               Grid.Row="4" Grid.Column="1" />
 
+        <!-- Définition des zones de saisie -->
+        <TextBox    Text="{Binding Announce.Title}"             Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding Announce.Content}"           Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
+        <DatePicker SelectedDate="{Binding Announce.StartDate}" Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
+        <DatePicker SelectedDate="{Binding Announce.EndDate}"   Grid.Row="4" Grid.Column="2"  Margin="10" Padding="5"/>
 
-        <TextBox    Text="{Binding Announce.Title}"        Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding Announce.Content}"       Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
-        <DatePicker SelectedDate="{Binding Announce.StartDate}"        Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
-        <DatePicker SelectedDate="{Binding Announce.EndDate}"        Grid.Row="4" Grid.Column="2"  Margin="10" Padding="5"/>
-
-
-
-
+        <!-- Bouton pour ajouter une annonce -->
         <Button x:Name="AddAnnounceButton" Grid.Column="1" Grid.Row="5" Click="AddAnnounceButton_Click" Content="Ajouter"/>
-
-
-
     </Grid>
 </Window>

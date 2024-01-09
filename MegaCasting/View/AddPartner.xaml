@@ -6,14 +6,18 @@
         xmlns:local="clr-namespace:MegaCasting.View"
         mc:Ignorable="d"
         Title="AddPartner" Height="320" Width="400">
+    <!-- Définition de la fenêtre -->
     <Grid>
+        <!-- Définition d'une grille pour organiser les éléments -->
         <Grid.ColumnDefinitions>
+            <!-- Définition des colonnes -->
             <ColumnDefinition />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <!-- Définition des lignes -->
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
@@ -24,21 +28,19 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Margin="12" Text="Label"                   Grid.Row="1" Grid.Column="1" />
-        <TextBlock Margin="12" Text="Numéro de Siret"                Grid.Row="2" Grid.Column="1" />
-        <TextBlock Margin="12" Text="Description"                 Grid.Row="3" Grid.Column="1" />
-        <TextBlock Margin="12" Text="DateTime"    Grid.Row="5" Grid.Column="1" />
+        <!-- Définition des étiquettes de texte -->
+        <TextBlock Margin="12" Text="Label"                     Grid.Row="1" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Numéro de Siret"           Grid.Row="2" Grid.Column="1" />
+        <TextBlock Margin="12" Text="Description"               Grid.Row="3" Grid.Column="1" />
+        <TextBlock Margin="12" Text="DateTime"                  Grid.Row="5" Grid.Column="1" />
 
+        <!-- Définition des zones de saisie -->
+        <TextBox    Text="{Binding Partner.Label}"              Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding Partner.SIRET}"              Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
+        <TextBox    Text="{Binding Partner.Description}"        Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
+        <DatePicker SelectedDate="{Binding Partner.DateTime}"   Grid.Row="5" Grid.Column="2"  Margin="10" Padding="5"/>
 
-
-        <TextBox    Text="{Binding Partner.Label}"        Grid.Row="1" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding Partner.SIRET}"       Grid.Row="2" Grid.Column="2"  Margin="10" Padding="5"/>
-        <TextBox    Text="{Binding Partner.Description}"           Grid.Row="3" Grid.Column="2"  Margin="10" Padding="5"/>
-        <DatePicker SelectedDate="{Binding Partner.DateTime}"        Grid.Row="5" Grid.Column="2"  Margin="10" Padding="5"/>
-
-
-
-
+        <!-- Bouton pour ajouter un partenaire -->
         <Button x:Name="AddPartnerButton" Grid.Column="1" Grid.Row="6" Click="AddPartnerButton_Click" Content="Ajouter"/>
 
 
